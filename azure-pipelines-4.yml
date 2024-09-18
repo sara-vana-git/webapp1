@@ -26,10 +26,16 @@ steps:
     projects: '$(solution)'
 
 - script: |
+    echo "Cleaning output directory..."
     if [ -d "$(outputDirectory)" ]; then
       rm -rf $(outputDirectory)
+      echo "Output directory cleaned."
+    else
+      echo "Output directory does not exist, creating it..."
     fi
-  displayName: 'Clean Output Directory'
+    mkdir -p $(outputDirectory)
+    echo "Output directory created."
+  displayName: 'Clean and Create Output Directory'
 
 - task: DotNetCoreCLI@2
   inputs:
