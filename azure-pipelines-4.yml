@@ -17,6 +17,14 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+- task: UseDotNet@2
+  displayName: 'Use .NET 8.0 SDK'
+  inputs:
+    packageType: 'sdk'
+    version: '8.x.x'  # Use the specific version you need
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
