@@ -21,7 +21,7 @@ steps:
   displayName: 'Use .NET 8.0 SDK'
   inputs:
     packageType: 'sdk'
-    version: '8.x.x'  # Use the specific version you need
+    version: '8.0.x'  # Use the specific version you need
     installationPath: $(Agent.ToolsDirectory)/dotnet
 
 
